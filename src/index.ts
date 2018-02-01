@@ -1,0 +1,1 @@
+export { initializePhraseAppEditor } from './config'

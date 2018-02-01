@@ -1,0 +1,17 @@
+{
+  "name": "ngx-translate-phraseapp",
+  "version": "1.0.0",
+  "description": "PhraseApp adapter for ngx-translate",
+  "keywords": [
+    "angular",
+    "i18n",
+    "localization",
+    "ngx-translate",
+    "phraseapp"
+  ],
+  "author": "PhraseApp",
+  "license": "MIT",
+  "dependencies": {
+    "@ngx-translate/core": "^9.0.0"
+  }
+}
