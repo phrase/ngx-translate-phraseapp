@@ -2,6 +2,10 @@
   "name": "ngx-translate-phraseapp",
   "version": "1.0.0",
   "description": "PhraseApp adapter for ngx-translate",
+  "main": "dist/ngx-translate-phraseapp.js",
+  "scripts": {
+    "dist": "webpack"
+  },
   "keywords": [
     "angular",
     "i18n",
@@ -12,6 +16,9 @@
   "author": "PhraseApp",
   "license": "MIT",
   "dependencies": {
-    "@ngx-translate/core": "^9.0.0"
+    "@ngx-translate/core": "^9.1.1",
+    "ts-loader": "^3.4.0",
+    "typescript": "^2.7.1",
+    "webpack": "^3.10.0"
   }
 }
