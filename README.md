@@ -1,6 +1,5 @@
 # ngx-translate-phraseapp
 
-
 ## Prerequisites
 
 To use ngx-translate-phraseapp with your application you have to:
@@ -14,7 +13,7 @@ You can find a demo project on [GitHub](https://github.com/phrase/ngx-translate-
 
 ## Installation
 
-### via NPM:
+### NPM:
 
     npm install ngx-translate-phraseapp
 
@@ -41,14 +40,15 @@ let config = {
 };
 ```
 
-You can find the Project-ID in the Project overview in the PhraseApp Translation Center
+You can find the Project-ID in the Project overview in the PhraseApp Translation Center.
 
-### JavaScript snippet
+### Code snippets
 
-Add the following snippet to your Angular app.
+Add the following snippets to your Angular app:
 
+`app.component.ts`
 ```js
-import {PhraseAppCompiler} from 'ngx-translate-phraseapp'
+import { initializePhraseAppEditor, PhraseAppCompiler} from 'ngx-translate-phraseapp'
 
 let config = {
   projectId: '<YOUR_PROJECT_ID>',
@@ -57,9 +57,16 @@ let config = {
   suffix: "__}}",
   fullReparse: true
 };
+
+initializePhraseAppEditor(config);
 ```
 
+`app.module.ts`
 ```js
+import { TranslateModule, TranslateLoader, TranslateCompiler } from '@ngx-translate/core';
+import { PhraseAppCompiler } from 'ngx-translate-phraseapp'
+
+
 @NgModule({
   declarations: [
     AppComponent
