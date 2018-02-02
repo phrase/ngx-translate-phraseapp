@@ -5,7 +5,9 @@ module.exports = {
             { test: /\.tsx?$/, loader: 'ts-loader' },
         ]
     },
-    externals: [],
+    externals: [
+        "@angular/core", "rxjs"
+    ],
     entry: './src/index.ts',
     output: {
         path: __dirname + '/dist',
