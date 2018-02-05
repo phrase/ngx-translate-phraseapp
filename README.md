@@ -64,8 +64,12 @@ initializePhraseAppEditor(config);
 `app.module.ts`
 ```js
 import { TranslateModule, TranslateLoader, TranslateCompiler } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { PhraseAppCompiler } from 'ngx-translate-phraseapp'
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
