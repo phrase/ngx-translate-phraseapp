@@ -1,4 +1,5 @@
 import { TranslateCompiler } from '@ngx-translate/core';
+import { escapeId } from './config';
 
 
 export class PhraseAppCompiler extends TranslateCompiler {
@@ -7,17 +8,15 @@ export class PhraseAppCompiler extends TranslateCompiler {
     }
 
     compile(value: string, lang: string): string | Function {
-        return value;
+        return escapeId(value);
     }
 
     compileTranslations(translations: any, lang: string): any {
-        let config = (<any>window).PHRASEAPP_CONFIG;
-        let phraseTranslations: any = {};
-
+        let escapedTranslations: any = {};
         Object.keys(translations).forEach((key, value) => {
-            phraseTranslations[key] = config.prefix + 'phrase_' + key + config.suffix;
+            escapedTranslations[key] = escapeId(key);
         });
 
-        return phraseTranslations;
+        return escapedTranslations;
     }
 }
