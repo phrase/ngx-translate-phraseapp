@@ -30,12 +30,12 @@ You can also build it directly from source to get the latest and greatest:
 
 ### Configure
 
-```
+```js
 let config = {
   projectId: '<YOUR_PROJECT_ID>',
   phraseEnabled: true,
-  phraseDecoratorPrefix: "[[__",
-  phraseDecoratorSuffix: ""__]]",
+  prefix: "{{__",
+  suffix: "__}}",
   fullReparse: true
 };
 ```
@@ -92,8 +92,6 @@ import { PhraseAppCompiler } from 'ngx-translate-phraseapp'
 ```
 
 If this does not work for you, you can also integrate the [JavaScript snippet manually](http://docs.phraseapp.com/guides/in-context-editor/custom-integration/).
-
-## How does it work?
 
 ## Support
 
