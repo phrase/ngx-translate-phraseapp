@@ -6,7 +6,7 @@ module.exports = {
         ]
     },
     externals: [
-        "@angular/core", "rxjs"
+        "@ngx-translate/core"
     ],
     entry: './src/index.ts',
     output: {
