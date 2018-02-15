@@ -2,6 +2,9 @@
   "name": "ngx-translate-phraseapp",
   "version": "0.1.2",
   "description": "PhraseApp adapter for ngx-translate",
+  "author": "PhraseApp <support@phraseapp.com> (https://phraseapp.com)",
+  "homepage": "https://phraseapp.com",
+  "license": "MIT",
   "main": "dist/ngx-translate-phraseapp.js",
   "scripts": {
     "dist": "webpack"
@@ -11,13 +14,19 @@
     "i18n",
     "localization",
     "ngx-translate",
+    "translation",
+    "i18n",
+    "l10n",
+    "internationalization",
     "phraseapp"
   ],
-  "author": "PhraseApp",
-  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/phrase/ngx-translate-phraseapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phrase/ngx-translate-phraseapp/issues",
+    "email": "support@phraseapp.com"
   },
   "dependencies": {},
   "devDependencies": {
@@ -27,5 +36,8 @@
     "ts-loader": "^3.4.0",
     "typescript": "^2.7.1",
     "webpack": "^3.10.0"
-  }
+  },
+  "files": [
+    "dist/ngx-translate-phraseapp.js"
+  ]
 }
