@@ -17,17 +17,6 @@ You can find a demo project on [GitHub](https://github.com/phrase/ngx-translate-
 
     npm install ngx-translate-phraseapp
 
-### Build form source
-
-You can also build it directly from source to get the latest and greatest:
-
-    npm run dist
-
-### Development
-
-	npm install
-
-
 ### Configure
 
 ```js
@@ -96,6 +85,15 @@ export function HttpLoaderFactory(http: HttpClient) {
 ```
 
 If this does not work for you, you can also integrate the [JavaScript snippet manually](http://docs.phraseapp.com/guides/in-context-editor/custom-integration/).
+
+## Development
+
+### Build from source
+You can also build it directly from source to get the latest and greatest:
+```
+npm install
+npm run dist
+```
 
 ## Support
 
