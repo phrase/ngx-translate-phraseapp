@@ -1,7 +1,7 @@
 module.exports = {
     resolve: { extensions: ['.js', '.ts'] },
     module: {
-        loaders: [
+        rules: [
             { test: /\.tsx?$/, loader: 'ts-loader' },
         ]
     },

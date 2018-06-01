@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "dist/ngx-translate-phraseapp.js",
   "scripts": {
-    "dist": "webpack"
+    "dist": "rm -rf dist/ && webpack --mode production"
   },
   "keywords": [
     "angular",
@@ -29,12 +29,13 @@
     "email": "support@phraseapp.com"
   },
   "devDependencies": {
-    "@angular/core": "^5.2.3",
-    "@ngx-translate/core": "^9.1.1",
-    "rxjs": "^5.5.6",
-    "ts-loader": "^3.4.0",
-    "typescript": "^2.7.1",
-    "webpack": "^3.10.0"
+    "@angular/core": "^6.0.3",
+    "@ngx-translate/core": "^10.0.2",
+    "rxjs": "^5.5.11",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.9.1",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.4"
   },
   "peerDependencies": {
     "@ngx-translate/core": ">= 7.2.0"
