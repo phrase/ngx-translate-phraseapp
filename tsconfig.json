@@ -6,12 +6,17 @@
         "sourceMap": true,
         "target": "es5",
         "module": "commonjs",
-        "declaration": false,
-        "moduleResolution": "node"
+        "declaration": true,
+        "declarationDir": "./",
+        "moduleResolution": "node",
+        "lib": [
+            "es2015",
+            "es2015.iterable",
+            "dom"
+        ]
     },
     "exclude": [
-        "node_modules",
-        "build"
+        "node_modules"
     ],
     "include": [
         "src"
