@@ -9,7 +9,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "dist": "npm run clean && webpack --mode production"
+    "dist": "npm run clean && webpack --mode production",
+    "prepublishOnly": "npm run dist"
   },
   "keywords": [
     "angular",
