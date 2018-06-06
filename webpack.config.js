@@ -14,5 +14,6 @@ module.exports = {
         filename: 'ngx-translate-phraseapp.js',
         libraryTarget: "umd",
         library: 'ngx-translate-phraseapp'
-    }
+    },
+    devtool: "source-map"
 };

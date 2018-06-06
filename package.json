@@ -1,13 +1,15 @@
 {
   "name": "ngx-translate-phraseapp",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "PhraseApp adapter for ngx-translate",
   "author": "PhraseApp <support@phraseapp.com> (https://phraseapp.com)",
   "homepage": "https://phraseapp.com",
   "license": "MIT",
   "main": "dist/ngx-translate-phraseapp.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "dist": "rm -rf dist/ && webpack --mode production"
+    "clean": "rm -rf dist",
+    "dist": "npm run clean && webpack --mode production"
   },
   "keywords": [
     "angular",
@@ -41,6 +43,6 @@
     "@ngx-translate/core": ">= 7.2.0"
   },
   "files": [
-    "dist/ngx-translate-phraseapp.js"
+    "dist/"
   ]
 }
