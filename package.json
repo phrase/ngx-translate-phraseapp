@@ -5,11 +5,8 @@
   "author": "PhraseApp <support@phraseapp.com> (https://phraseapp.com)",
   "homepage": "https://phraseapp.com",
   "license": "MIT",
-  "main": "dist/ngx-translate-phraseapp.js",
-  "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf dist",
-    "dist": "npm run clean && webpack --mode production",
+    "dist": "ng build",
     "prepublishOnly": "npm run dist"
   },
   "keywords": [
@@ -32,13 +29,17 @@
     "email": "support@phraseapp.com"
   },
   "devDependencies": {
+    "@angular-devkit/build-ng-packagr": "^0.6.8",
+    "@angular/cli": "^6.0.8",
+    "@angular/compiler": "^6.0.4",
+    "@angular/compiler-cli": "^6.0.4",
     "@angular/core": "^6.0.3",
     "@ngx-translate/core": "^10.0.2",
-    "rxjs": "^5.5.11",
-    "ts-loader": "^4.3.0",
-    "typescript": "^2.9.1",
-    "webpack": "^4.10.2",
-    "webpack-cli": "^2.1.4"
+    "ng-packagr": "^3.0.1",
+    "rxjs": "^6.2.0",
+    "tsickle": "^0.29.0",
+    "typescript": "~2.7.0",
+    "zone.js": "^0.8.26"
   },
   "peerDependencies": {
     "@ngx-translate/core": ">= 7.2.0"
