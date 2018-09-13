@@ -20,11 +20,35 @@ export class PhraseAppCompiler extends TranslateCompiler {
             return translations;
         }
 
-        let escapedTranslations: any = {};
-        Object.keys(translations).forEach((key, value) => {
+        translations = this.flatten(translations);
+        const escapedTranslations: any = {};
+        Object.keys(translations).forEach((key, _) => {
             escapedTranslations[key] = escapeId(key);
         });
 
         return escapedTranslations;
+    }
+    flatten(object: Object): Object {
+        const separator = '.'
+        const isValidObject = (value: any = {}): boolean => {
+            if (!value) {
+                return false;
+            }
+
+            const isArray = Array.isArray(value);
+            const isΟbject = Object.prototype.toString.call(value) === '[object Object]';
+            const hasKeys = !!Object.keys(value).length;
+
+            return !isArray && isΟbject && hasKeys;
+        };
+
+        const walker = (child: any = {}, path: Array<string> = []): Object => {
+            return Object.assign({}, ...Object.keys(child).map(key => isValidObject(child[key])
+                ? walker(child[key], path.concat([key]))
+                : { [path.concat([key]).join(separator)]: child[key] })
+            );
+        };
+
+        return Object.assign({}, walker(object));
     }
 }
