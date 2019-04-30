@@ -14,7 +14,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "dist": "ng-packagr -p tsconfig.json",
-    "prepublishOnly": "npm run dist"
+    "prepare": "npm run dist"
   },
   "keywords": [
     "angular",
