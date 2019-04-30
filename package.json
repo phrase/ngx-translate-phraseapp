@@ -51,10 +51,6 @@
     "lib": {
       "entryFile": "src/index.ts",
       "dest": "./dist",
-      "externals": {
-        "@ngx-translate/core": "ngx-translate-core",
-        "@ngx-translate/core/index": "ngx-translate-core"
-      },
       "umdModuleIds": {
         "@ngx-translate/core": "core$1"
       }
