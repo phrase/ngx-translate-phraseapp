@@ -1,21 +1,26 @@
 {
+    "angularCompilerOptions": {
+        "skipTemplateCodegen": true,
+        "strictMetadataEmit": true
+    },
     "compilerOptions": {
         "noImplicitAny": true,
-        "noEmitOnError": true,
+        "noEmitOnError": false,
+        "noUnusedLocals": true,
         "removeComments": false,
         "sourceMap": true,
+        "strict": true,
         "target": "es5",
-        "module": "commonjs",
         "declaration": true,
         "declarationDir": "dist",
-        "moduleResolution": "node",
+        "module": "es2015",
+        "moduleResolution": "node", 
+        "baseUrl": "./",
         "lib": [
             "es2015",
             "es2015.iterable",
             "dom"
         ]
     },
-    "include": [
-        "src"
-    ]
+    "files": ["src/index.ts"]
 }

@@ -1,16 +1,20 @@
 {
+  "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "ngx-translate-phraseapp",
   "version": "0.2.0",
   "description": "PhraseApp adapter for ngx-translate",
   "author": "PhraseApp <support@phraseapp.com> (https://phraseapp.com)",
   "homepage": "https://phraseapp.com",
   "license": "MIT",
-  "main": "dist/ngx-translate-phraseapp.js",
-  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/bundles/ngx-translate-phraseapp.umd.js",
+  "typings": "dist/ngx-translate-phraseapp.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "dist": "npm run clean && webpack --mode production",
-    "prepublishOnly": "npm run dist"
+    "dist": "ng-packagr -p tsconfig.json",
+    "prepare": "npm run dist"
   },
   "keywords": [
     "angular",
@@ -32,18 +36,24 @@
     "email": "support@phraseapp.com"
   },
   "devDependencies": {
-    "@angular/core": "^5.2.5",
+    "@angular/core": "^6.0.0 || ^7.0.0",
     "@ngx-translate/core": "^9.1.1",
-    "rxjs": "^5.5.11",
-    "ts-loader": "^5.1.1",
-    "typescript": "^2.9.1",
-    "webpack": "^4.19.1",
-    "webpack-cli": "^3.1.0"
+    "@angular/compiler": "^7.0.0",
+    "@angular/compiler-cli": "^7.0.0",
+    "ng-packagr": "^5.0.1",
+    "typescript": "3.2.4"
   },
   "peerDependencies": {
+    "@angular/core": "^6.0.0 || ^7.0.0",
     "@ngx-translate/core": ">= 7.2.0"
   },
-  "files": [
-    "dist/"
-  ]
+  "ngPackage": {
+    "lib": {
+      "entryFile": "src/index.ts",
+      "dest": "./dist",
+      "umdModuleIds": {
+        "@ngx-translate/core": "core$1"
+      }
+    }
+  }
 }
