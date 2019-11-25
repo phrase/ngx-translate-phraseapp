@@ -6,7 +6,7 @@ ngx-translate-phraseapp is an addon for ngx-translate that lets you connect loca
 
 To use ngx-translate-phraseapp with your application you have to:
 
-* Sign up for a PhraseApp account: [https://phraseapp.com/en/signup](https://phraseapp.com/en/signup)
+* Sign up for a Phrase account: [https://phrase.com/signup](https://phrase.com/signup)
 * Use [ngx-translate](https://github.com/ngx-translate/core) module for localization in your Angular 2+ app
 
 ## Demo
@@ -31,7 +31,7 @@ let config = {
 };
 ```
 
-You can find the Project-ID in the Project overview in the PhraseApp Translation Center.
+You can find the Project-ID in the Project overview in the Phrase Translation Center.
 
 ### Code snippets
 
@@ -86,7 +86,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 })
 ```
 
-If this does not work for you, you can also integrate the [JavaScript snippet manually](http://docs.phraseapp.com/guides/in-context-editor/custom-integration/).
+If this does not work for you, you can also integrate the [JavaScript snippet manually](https://help.phrase.com/en/articles/2183908-integrate-in-context-editor-into-any-web-framework).
 
 ## Development
 
@@ -99,6 +99,6 @@ npm run dist
 
 ## Support
 
-**Question?** Contact us at: [phraseapp.com/contact](https://phraseapp.com/contact)
+**Question?** Contact us at: [phrase.com/contact](https://phrase.com/contact)
 
 **Issue?** Create a GitHub issues and share the problem
