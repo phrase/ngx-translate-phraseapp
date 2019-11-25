@@ -1,6 +1,6 @@
 # ngx-translate-phraseapp
 
-ngx-translate-phraseapp is an addon for ngx-translate that lets you connect localized Angular applications to the PhraseApp In-Context Editor.
+ngx-translate-phraseapp is an addon for ngx-translate that lets you connect localized Angular applications to the Phrase In-Context Editor.
 
 ## Prerequisites
 
