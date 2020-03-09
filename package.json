@@ -48,9 +48,9 @@
     "@ngx-translate/core": ">= 7.2.0"
   },
   "ngPackage": {
+    "dest": "./dist",
     "lib": {
       "entryFile": "src/index.ts",
-      "dest": "./dist",
       "umdModuleIds": {
         "@ngx-translate/core": "core$1"
       }
