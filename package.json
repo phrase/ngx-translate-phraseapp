@@ -6,15 +6,15 @@
   "author": "PhraseApp <support@phraseapp.com> (https://phraseapp.com)",
   "homepage": "https://phraseapp.com",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "main": "dist/bundles/ngx-translate-phraseapp.umd.js",
   "typings": "dist/ngx-translate-phraseapp.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
     "dist": "ng-packagr -p tsconfig.json",
-    "prepare": "npm run dist"
+    "prepare": "npm run dist",
+    "prerelease-dist": "npm run prepare",
+    "//release-dist": "use the script below to release new version of the package",
+    "release-dist": "npm publish dist"
   },
   "keywords": [
     "angular",

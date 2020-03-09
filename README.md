@@ -15,9 +15,11 @@ You can find a demo project on [GitHub](https://github.com/phrase/ngx-translate-
 
 ## Installation
 
-### NPM:
+### NPM
 
-    npm install ngx-translate-phraseapp
+```bash
+npm install ngx-translate-phraseapp
+```
 
 ### Configure
 
@@ -38,6 +40,7 @@ You can find the Project-ID in the Project overview in the Phrase Translation Ce
 Add the following snippets to your Angular app:
 
 `app.component.ts`
+
 ```js
 import { initializePhraseAppEditor, PhraseAppCompiler} from 'ngx-translate-phraseapp'
 
@@ -53,6 +56,7 @@ initializePhraseAppEditor(config);
 ```
 
 `app.module.ts`
+
 ```js
 import { TranslateModule, TranslateLoader, TranslateCompiler } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
@@ -91,8 +95,10 @@ If this does not work for you, you can also integrate the [JavaScript snippet ma
 ## Development
 
 ### Build from source
+
 You can also build it directly from source to get the latest and greatest:
-```
+
+```bash
 npm install
 npm run dist
 ```
