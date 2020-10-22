@@ -35,6 +35,15 @@ let config = {
 
 You can find the Project-ID in the Project overview in the Phrase Translation Center.
 
+By default, the In-Context Editor’s document parser converts all keys to lowercase. If you’re experiencing issues with this behavior and want to use case-sensitive keys within the In-Context Editor, consider disabling the automatic lowercase feature:
+
+```js
+let config = {
+  // ...
+  autoLowercase: false
+}
+```
+
 ### Code snippets
 
 Add the following snippets to your Angular app:
