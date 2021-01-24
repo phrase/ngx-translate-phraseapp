@@ -10,11 +10,11 @@
         "removeComments": false,
         "sourceMap": true,
         "strict": true,
-        "target": "es5",
+        "target": "es2015",
         "declaration": true,
         "declarationDir": "dist",
         "module": "es2015",
-        "moduleResolution": "node", 
+        "moduleResolution": "node",
         "baseUrl": "./",
         "lib": [
             "es2015",
