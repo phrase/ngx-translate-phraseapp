@@ -112,8 +112,6 @@ npm install
 npm run dist
 ```
 
-## Support
+## Get help / support
 
-**Question?** Contact us at: [phrase.com/contact](https://phrase.com/contact)
-
-**Issue?** Create a GitHub issues and share the problem
+Please contact [support@phrase.com](mailto:support@phrase.com?subject=[GitHub]%20) and we can take more direct action toward finding a solution.
