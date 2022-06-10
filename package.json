@@ -10,7 +10,7 @@
   "typings": "dist/ngx-translate-phraseapp.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "dist": "ng-packagr -p tsconfig.json",
+    "dist": "ng-packagr -p ng-package.json",
     "prepare": "npm run dist",
     "prerelease-dist": "npm run prepare",
     "//release-dist": "use the script below to release new version of the package",
@@ -36,24 +36,15 @@
     "email": "support@phrase.com"
   },
   "devDependencies": {
-    "@angular/compiler": "^10.0.0",
-    "@angular/compiler-cli": "^10.0.0",
-    "@angular/core": "^10.0.0",
-    "@ngx-translate/core": "^13.0.0",
-    "ng-packagr": "^10.0.0",
-    "typescript": "3.9.5"
+    "@angular/compiler": "^14.0.0",
+    "@angular/compiler-cli": "^14.0.0",
+    "@angular/core": "^14.0.0",
+    "@ngx-translate/core": "^14.0.0",
+    "ng-packagr": "^14.0.0",
+    "typescript": "4.7.3"
   },
   "peerDependencies": {
-    "@angular/core": ">=10.0.0",
-    "@ngx-translate/core": ">=13.0.0"
-  },
-  "ngPackage": {
-    "dest": "./dist",
-    "lib": {
-      "entryFile": "src/index.ts",
-      "umdModuleIds": {
-        "@ngx-translate/core": "core$1"
-      }
-    }
+    "@angular/core": ">=14.0.0",
+    "@ngx-translate/core": ">=14.0.0"
   }
 }
