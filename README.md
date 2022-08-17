@@ -101,6 +101,18 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 If this does not work for you, you can also integrate the [JavaScript snippet manually](https://help.phrase.com/en/articles/2183908-integrate-in-context-editor-into-any-web-framework).
 
+
+### Using the US Datacenter with ICE
+
+In addition to `phraseEnabled` and `projectId` in the config, also add the US specific URLs to enable working through the US endpoint.
+```
+  baseUrl: "https://us.app.phrase.com",
+  apiBaseUrl: 'https://api.us.app.phrase.com/api/v2',
+  oauthEndpointUrl: "https://api.us.app.phrase.com/api/v2/authorizations",
+  profileUrl: "https://us.app.phrase.com/settings/profile",
+```
+
+
 ## Development
 
 ### Build from source
