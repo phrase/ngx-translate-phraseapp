@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "ngx-translate-phraseapp",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Phrase adapter for ngx-translate",
   "author": "Phrase <support@phrase.com> (https://phrase.com)",
   "homepage": "https://phrase.com",
