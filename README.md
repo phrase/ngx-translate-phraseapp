@@ -2,6 +2,10 @@
 
 ngx-translate-phraseapp is an addon for ngx-translate that lets you connect localized Angular applications to the Phrase In-Context Editor.
 
+
+## Ivy
+Since Angular 13 the View Engine has been removed, and since 1.0.0 the `ngx-translate-phraseapp` package uses new version of Angular which might cause old projects to break. In this case try major version 0 package of this repository.
+
 ## Prerequisites
 
 To use ngx-translate-phraseapp with your application you have to:
