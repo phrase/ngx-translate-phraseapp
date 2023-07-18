@@ -10,7 +10,7 @@ export type PhraseConfig = Partial<{
   version: string;
   priorityLocales: string[];
   projectId: string;
-  accountId?: string;
+  accountId: string;
   branch: string;
   ajaxObserver: boolean;
   debugMode: boolean;

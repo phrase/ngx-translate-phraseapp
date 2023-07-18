@@ -12,7 +12,7 @@ Since Angular 13 the View Engine has been removed, and since 1.0.0 the `ngx-tran
 
 To use ngx-translate-phraseapp with your application you have to:
 
-* Sign up for a Phrase account: [https://phrase.com/signup](https://phrase.com/signup)
+* Sign up for a Phrase Strings account: [https://phrase.com/signup](https://phrase.com/signup)
 * Use [ngx-translate](https://github.com/ngx-translate/core) module for localization in your Angular 2+ app
 
 ### Demo
@@ -49,7 +49,7 @@ let config: PhraseConfig = {
 };
 ```
 
-You can find the Project-ID in the Project overview in the Phrase Translation Center. The Account-ID can be found in the Account Settings.
+You can find the Project-ID in the Project overview in the Phrase Strings Translation Center. The Account-ID can be found in the Organization settings.
 
 By default, the In-Context Editor’s document parser converts all keys to lowercase. If you’re experiencing issues with this behavior and want to use case-sensitive keys within the In-Context Editor, consider disabling the automatic lowercase feature:
 
