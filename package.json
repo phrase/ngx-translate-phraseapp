@@ -1,20 +1,14 @@
 {
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "ngx-translate-phraseapp",
   "version": "1.0.0",
   "description": "Phrase adapter for ngx-translate",
   "author": "Phrase <support@phrase.com> (https://phrase.com)",
   "homepage": "https://phrase.com",
   "license": "MIT",
-  "main": "dist/bundles/ngx-translate-phraseapp.umd.js",
-  "typings": "dist/ngx-translate-phraseapp.d.ts",
+  "main": "./src/index.js",
   "scripts": {
     "clean": "rm -rf dist",
     "build": "ng-packagr -p ng-package.json",
-    "prepare": "npm run dist",
-    "prerelease-dist": "npm run prepare",
-    "//release-dist": "use the script below to release new version of the package",
-    "release-dist": "npm publish dist",
     "release": "semantic-release"
   },
   "keywords": [
