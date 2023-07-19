@@ -1,38 +1,89 @@
-let phraseAppEditor = false;
+export type PhraseConfig = Partial<{
+  phraseEnabled: boolean;
+  baseUrl: string;
+  profileUrl: string;
+  apiBaseUrl: string;
+  oauthEndpointUrl: string;
+  helpUrl: string;
+  logoUrl: string;
+  stylesheetUrl: string;
+  version: string;
+  priorityLocales: string[];
+  projectId: string;
+  accountId: string;
+  branch: string;
+  ajaxObserver: boolean;
+  debugMode: boolean;
+  prefix: string;
+  suffix: string;
+  autoLowercase: boolean;
+  useOldICE: boolean;
+  forceLocale: boolean;
+  loginDialogMessage: string;
+  autoLogin: {
+    perform: boolean;
+    email: string;
+    password: string;
+  };
+  sso: {
+    enabled: boolean;
+    enforced: boolean;
+    provider: string;
+    identifier: string;
+  };
+  fullReparse: boolean;
+  sanitize?: (content: string) => string;
+}>;
 
-function sanitizeConfig(config: any): any {
-    config.prefix = config.prefix ? config.prefix : '{{__';
-    config.suffix = config.suffix ? config.suffix : '__}}';
-
-    return config;
+declare global {
+  interface Window {
+    PHRASEAPP_ENABLED: PhraseConfig['phraseEnabled'];
+    PHRASEAPP_CONFIG: PhraseConfig;
+  }
 }
 
-export function initializePhraseAppEditor(config: any) {
-    if (phraseAppEditor) return;
+let phraseAppEditor = false;
 
-    phraseAppEditor = true;
-    (<any>window).PHRASEAPP_ENABLED = config.phraseEnabled;
-    (<any>window).PHRASEAPP_CONFIG = sanitizeConfig(config);
+export function initializePhraseAppEditor(config: PhraseConfig) {
+  if (phraseAppEditor) return;
+  phraseAppEditor = true;
 
-    if (config.phraseEnabled) {
-        const phraseapp = document.createElement('script');
-        phraseapp.type = 'text/javascript';
-        phraseapp.async = true;
-        phraseapp.src = ['https://', 'phraseapp.com/assets/in-context-editor/2.0/app.js?', new Date().getTime()].join('');
-        var s = document.getElementsByTagName('script')[0];
-        if (s != undefined && s.parentNode != undefined) {
-            s.parentNode.insertBefore(phraseapp, s);
-        } else {
-            document.insertBefore(phraseapp, null);
-        }
+  const defaultConfig: PhraseConfig = {
+    phraseEnabled: false,
+    prefix: '{{__',
+    suffix: '__}}',
+    useOldICE: false,
+    fullReparse: true,
+  };
+
+  window.PHRASEAPP_ENABLED = config.phraseEnabled || false;
+  window.PHRASEAPP_CONFIG = { ...defaultConfig, ...config };
+
+  if (config.phraseEnabled) {
+    const phraseapp = document.createElement('script');
+    phraseapp.async = true;
+
+    if (!config.useOldICE) {
+      phraseapp.type = 'module';
+      phraseapp.src = `https://d2bgdldl6xit7z.cloudfront.net/latest/ice/index.js`;
+    } else {
+      phraseapp.type = 'text/javascript';
+      phraseapp.src = `https://phrase.com/assets/in-context-editor/2.0/app.js?${new Date().getTime()}`;
     }
+    var scriptEl = document.getElementsByTagName('script')[0];
+    if (scriptEl?.parentNode) {
+      scriptEl.parentNode.insertBefore(phraseapp, scriptEl);
+    } else {
+      document.body.appendChild(phraseapp);
+    }
+  }
 }
 
 export function isPhraseEnabled(): boolean {
-    return (<any>window).PHRASEAPP_ENABLED
+  return !!window.PHRASEAPP_ENABLED;
 }
 
 export function escapeId(id: string): string {
-    let config = (<any>window).PHRASEAPP_CONFIG;
-    return config.prefix + 'phrase_' + id + config.suffix;
+  let config = window.PHRASEAPP_CONFIG;
+  return config.prefix + 'phrase_' + id + config.suffix;
 }

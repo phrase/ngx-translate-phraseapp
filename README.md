@@ -1,72 +1,110 @@
 # ngx-translate-phraseapp
 
-ngx-translate-phraseapp is an addon for ngx-translate that lets you connect localized Angular applications to the Phrase In-Context Editor.
+**ngx-translate-phraseapp** is the official library for integrating [Phrase Strings In-Context Editor](https://support.phrase.com/hc/en-us/articles/5784095916188-In-Context-Editor-Strings) with [ngx-translate](https://github.com/ngx-translate/core) in your Angular application.
 
 
 ## Ivy
 Since Angular 13 the View Engine has been removed, and since 1.0.0 the `ngx-translate-phraseapp` package uses new version of Angular which might cause old projects to break. In this case try major version 0 package of this repository.
 
-## Prerequisites
+## :scroll: Documentation
+
+### Prerequisites
 
 To use ngx-translate-phraseapp with your application you have to:
 
-* Sign up for a Phrase account: [https://phrase.com/signup](https://phrase.com/signup)
+* Sign up for a Phrase Strings account: [https://phrase.com/signup](https://phrase.com/signup)
 * Use [ngx-translate](https://github.com/ngx-translate/core) module for localization in your Angular 2+ app
 
-## Demo
+### Demo
 
 You can find a demo project on [GitHub](https://github.com/phrase/ngx-translate-phraseapp-demo).
 
-## Installation
+### Installation
 
-### NPM
+#### NPM
 
 ```bash
 npm install ngx-translate-phraseapp
 ```
 
-### Configure
+#### Build from source
 
-```js
-let config = {
+You can also build it directly from source to get the latest and greatest:
+
+```bash
+npm run dist
+```
+
+### Usage
+
+#### Configure
+
+```ts
+import { initializePhraseAppEditor, PhraseConfig } from 'ngx-translate-phraseapp';
+
+let config: PhraseConfig = {
   projectId: '<YOUR_PROJECT_ID>',
+  accountID: '<YOUR_ACCOUNT_ID>'
   phraseEnabled: true,
-  prefix: "{{__",
-  suffix: "__}}",
-  fullReparse: true
 };
 ```
 
-You can find the Project-ID in the Project overview in the Phrase Translation Center.
+You can find the Project-ID in the Project overview in the Phrase Strings Translation Center. The Account-ID can be found in the Organization settings.
 
 By default, the In-Context Editor’s document parser converts all keys to lowercase. If you’re experiencing issues with this behavior and want to use case-sensitive keys within the In-Context Editor, consider disabling the automatic lowercase feature:
 
-```js
-let config = {
+```ts
+let config: PhraseConfig = {
   // ...
   autoLowercase: false
 }
 ```
 
-### Code snippets
-
-Add the following snippets to your Angular app:
-
-`app.component.ts`
-
+#### Using the old version of the ICE
+To use the old version of ICE, use option `useOldICE: true` in your PHRASEAPP_CONFIG or integration options
 ```js
-import { initializePhraseAppEditor, PhraseAppCompiler} from 'ngx-translate-phraseapp'
-
 let config = {
   projectId: '<YOUR_PROJECT_ID>',
+  accountID: '<YOUR_ACCOUNT_ID>',
   phraseEnabled: true,
-  prefix: "{{__",
-  suffix: "__}}",
-  fullReparse: true
+  useOldICE: true,
 };
 
 initializePhraseAppEditor(config);
 ```
+
+
+#### Using the US Datacenter with ICE
+
+In addition to `phraseEnabled`, `projectId` and `accountID` in the config, also add the US specific URLs to enable working through the US endpoint.
+```js
+  baseUrl: "https://us.app.phrase.com",
+  apiBaseUrl: 'https://api.us.app.phrase.com/api/v2',
+  oauthEndpointUrl: "https://api.us.app.phrase.com/api/v2/authorizations",
+  profileUrl: "https://us.app.phrase.com/settings/profile",
+```
+
+### Code examples
+
+Add the following snippets to your Angular app:
+
+<br>
+
+`app.component.ts`
+
+```ts
+import { initializePhraseAppEditor, PhraseAppCompiler, PhraseConfig} from 'ngx-translate-phraseapp'
+
+let config: PhraseConfig = {
+  projectId: '<YOUR_PROJECT_ID>',
+  accountID: '<YOUR_ACCOUNT_ID>'
+  phraseEnabled: true,
+};
+
+initializePhraseAppEditor(config);
+```
+<br>
+<br>
 
 `app.module.ts`
 
@@ -74,6 +112,8 @@ initializePhraseAppEditor(config);
 import { TranslateModule, TranslateLoader, TranslateCompiler } from '@ngx-translate/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { PhraseAppCompiler } from 'ngx-translate-phraseapp'
+import { AppComponent } from './app.component';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -103,31 +143,32 @@ export function HttpLoaderFactory(http: HttpClient) {
 })
 ```
 
-If this does not work for you, you can also integrate the [JavaScript snippet manually](https://help.phrase.com/en/articles/2183908-integrate-in-context-editor-into-any-web-framework).
+If this does not work for you, you can also integrate the [JavaScript snippet manually](https://help.phrase.com/help/integrate-in-context-editor-into-any-web-framework).
 
 
 ### Using the US Datacenter with ICE
 
 In addition to `phraseEnabled` and `projectId` in the config, also add the US specific URLs to enable working through the US endpoint.
-```
+```ts
+let config: PhraseConfig = {
+  // ...
   baseUrl: "https://us.app.phrase.com",
   apiBaseUrl: 'https://api.us.app.phrase.com/api/v2',
   oauthEndpointUrl: "https://api.us.app.phrase.com/api/v2/authorizations",
   profileUrl: "https://us.app.phrase.com/settings/profile",
+}
 ```
 
+## :white_check_mark: Commits & Pull Requests
 
-## Development
+We welcome anyone who wants to contribute to our codebase, so if you notice something, feel free to open a Pull Request! However, we ask that you please use the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification for your commit messages and titles when opening a Pull Request.
 
-### Build from source
+Example: `chore: Update README`
 
-You can also build it directly from source to get the latest and greatest:
+## :question: Issues, Questions, Support
 
-```bash
-npm install
-npm run dist
-```
+Please use [GitHub issues](https://github.com/phrase/ngx-translate-phraseapp/issues) to share your problem, and we will do our best to answer any questions or to support you in finding a solution.
 
-## Get help / support
+## :memo: Changelog
 
-Please contact [support@phrase.com](mailto:support@phrase.com?subject=[GitHub]%20) and we can take more direct action toward finding a solution.
+Detailed changes for each release are documented in the [changelog](https://github.com/phrase/ngx-translate-phraseapp/releases).

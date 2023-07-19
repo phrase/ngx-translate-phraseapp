@@ -1,20 +1,15 @@
 {
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "ngx-translate-phraseapp",
   "version": "1.0.0",
   "description": "Phrase adapter for ngx-translate",
   "author": "Phrase <support@phrase.com> (https://phrase.com)",
   "homepage": "https://phrase.com",
   "license": "MIT",
-  "main": "dist/bundles/ngx-translate-phraseapp.umd.js",
-  "typings": "dist/ngx-translate-phraseapp.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "dist": "ng-packagr -p ng-package.json",
-    "prepare": "npm run dist",
-    "prerelease-dist": "npm run prepare",
-    "//release-dist": "use the script below to release new version of the package",
-    "release-dist": "npm publish dist"
+    "build": "ng-packagr -p ng-package.json",
+    "release:dry-run": "semantic-release -d",
+    "release": "semantic-release"
   },
   "keywords": [
     "angular",
@@ -36,12 +31,15 @@
     "email": "support@phrase.com"
   },
   "devDependencies": {
-    "@angular/compiler": "^14.0.0",
-    "@angular/compiler-cli": "^14.0.0",
-    "@angular/core": "^14.0.0",
-    "@ngx-translate/core": "^14.0.0",
-    "ng-packagr": "^14.0.0",
-    "typescript": "4.7.3"
+    "@angular/compiler": "^16.1.5",
+    "@angular/compiler-cli": "^16.1.5",
+    "@angular/core": "^16.1.5",
+    "@ngx-translate/core": "^15.0.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "ng-packagr": "^16.1.0",
+    "semantic-release": "^21.0.7",
+    "typescript": "5.1.6"
   },
   "peerDependencies": {
     "@angular/core": ">=14.0.0",
