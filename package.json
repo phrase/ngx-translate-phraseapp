@@ -5,6 +5,7 @@
   "author": "Phrase <support@phrase.com> (https://phrase.com)",
   "homepage": "https://phrase.com",
   "license": "MIT",
+  "main": "src/index.ts",
   "scripts": {
     "clean": "rm -rf dist",
     "build": "ng-packagr -p ng-package.json",
