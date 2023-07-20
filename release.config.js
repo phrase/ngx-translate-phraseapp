@@ -11,11 +11,7 @@ module.exports = {
           "pkgRoot": "dist/",
           "tarballDir": "release"
       }],
-      ["@semantic-release/github", {
-          "assets": [
-            { "path": "dist/", "label": "Package distribution" },
-          ]
-      }],
+      "@semantic-release/github",
       "@semantic-release/git"
   ],
   "preset": "angular"
