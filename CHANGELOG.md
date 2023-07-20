@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.1.0...v1.1.1) (2023-07-20)
+
+
+### Bug Fixes
+
+* **release:** added npm rootdir option to semantic release ([b425827](https://github.com/phrase/ngx-translate-phraseapp/commit/b4258274bde15f36d801afffa2d3d5c19a5de7cf))
+* **release:** wrong publishing workflow ([c862d48](https://github.com/phrase/ngx-translate-phraseapp/commit/c862d48f48fce66669b20e3a8cd6c9e6ab144c5d))
+
 # [1.1.0](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.0.0...v1.1.0) (2023-07-19)
 
 
