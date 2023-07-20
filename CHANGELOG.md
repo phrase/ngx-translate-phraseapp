@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.1.1...v1.1.2) (2023-07-20)
+
+
+### Bug Fixes
+
+* **release:** removed unnecessary github release options so pipleline can run ([a071d97](https://github.com/phrase/ngx-translate-phraseapp/commit/a071d97b97c01688b1eb63918c89e35103f02e73))
+
 ## [1.1.1](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.1.0...v1.1.1) (2023-07-20)
 
 
