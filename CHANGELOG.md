@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.1.2...v1.1.3) (2023-08-28)
+
+
+### Bug Fixes
+
+* **TSE-1157:** Improve US datacenter documentation and typings ([#47](https://github.com/phrase/ngx-translate-phraseapp/issues/47)) ([961b0ef](https://github.com/phrase/ngx-translate-phraseapp/commit/961b0ef12d222dbc4704dce7e83a4e16353c49cd))
+
 ## [1.1.2](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.1.1...v1.1.2) (2023-07-20)
 
 
