@@ -20,6 +20,7 @@ export type PhraseConfig = Partial<{
   useOldICE: boolean;
   forceLocale: boolean;
   loginDialogMessage: string;
+  datacenter: 'eu' | 'us';
   autoLogin: {
     perform: boolean;
     email: string;
