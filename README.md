@@ -17,7 +17,11 @@ To use ngx-translate-phraseapp with your application you have to:
 
 ### Demo
 
-You can find a demo project on [GitHub](https://github.com/phrase/ngx-translate-phraseapp-demo).
+You can find a demo projects in `./examples` directory:
+- [example for Angular 11](https://github.com/phrase/ngx-translate-phraseapp/tree/master/examples/angular11). 
+- [example for Angular 17](https://github.com/phrase/ngx-translate-phraseapp/tree/master/examples/angular17).
+ 
+Examples have their own `README.md`s with instructions how to run them.
 
 ### Installation
 
