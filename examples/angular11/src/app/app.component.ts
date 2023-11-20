@@ -19,7 +19,6 @@ export class AppComponent {
       prefix: "{{__",
       suffix: "__}}",
       fullReparse: true,
-      useOldICE: false,
     };
 
     initializePhraseAppEditor(config);
