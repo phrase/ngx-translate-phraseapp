@@ -17,7 +17,11 @@ To use ngx-translate-phraseapp with your application you have to:
 
 ### Demo
 
-You can find a demo project on [GitHub](https://github.com/phrase/ngx-translate-phraseapp-demo).
+You can find a demo projects in `./examples` directory:
+- [example for Angular 11](https://github.com/phrase/ngx-translate-phraseapp/tree/master/examples/angular11). 
+- [example for Angular 17](https://github.com/phrase/ngx-translate-phraseapp/tree/master/examples/angular17).
+ 
+Examples have their own `README.md`s with instructions how to run them.
 
 ### Installation
 
@@ -61,6 +65,8 @@ let config: PhraseConfig = {
 ```
 
 #### Using the old version of the ICE
+Starting from version `1.1.0` new version of ICE is supported and used by default.
+
 To use the old version of ICE, use option `useOldICE: true` in your PHRASEAPP_CONFIG or integration options
 ```js
 let config = {
@@ -72,7 +78,6 @@ let config = {
 
 initializePhraseAppEditor(config);
 ```
-
 
 #### Using the US Datacenter with ICE
 
