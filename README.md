@@ -65,6 +65,8 @@ let config: PhraseConfig = {
 ```
 
 #### Using the old version of the ICE
+Starting from version `1.1.0` new version of ICE is supported and used by default.
+
 To use the old version of ICE, use option `useOldICE: true` in your PHRASEAPP_CONFIG or integration options
 ```js
 let config = {
@@ -76,7 +78,6 @@ let config = {
 
 initializePhraseAppEditor(config);
 ```
-
 
 #### Using the US Datacenter with ICE
 
