@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.1.4...v1.2.0) (2023-11-27)
+
+
+### Features
+
+* **TSE-1350:** Add origin field to ICE config ([#50](https://github.com/phrase/ngx-translate-phraseapp/issues/50)) ([abb7ff2](https://github.com/phrase/ngx-translate-phraseapp/commit/abb7ff2233d901dcb86e55a56c7a63821632f9f5))
+
 ## [1.1.4](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.1.3...v1.1.4) (2023-11-20)
 
 ## [1.1.3](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.1.2...v1.1.3) (2023-08-28)
