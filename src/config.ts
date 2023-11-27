@@ -34,6 +34,7 @@ export type PhraseConfig = Partial<{
   };
   fullReparse: boolean;
   sanitize?: (content: string) => string;
+  origin?: string;
 }>;
 
 declare global {
@@ -58,7 +59,11 @@ export function initializePhraseAppEditor(config: PhraseConfig) {
   };
 
   window.PHRASEAPP_ENABLED = config.phraseEnabled || false;
-  window.PHRASEAPP_CONFIG = { ...defaultConfig, ...config };
+  window.PHRASEAPP_CONFIG = {
+    ...defaultConfig,
+    ...config,
+    origin: 'ngx-translate-phraseapp',
+  };
 
   if (config.phraseEnabled) {
     const phraseapp = document.createElement('script');
