@@ -35,6 +35,7 @@ export type PhraseConfig = Partial<{
   fullReparse: boolean;
   sanitize?: (content: string) => string;
   origin?: string;
+  hidingClasses: string[];
 }>;
 
 declare global {
