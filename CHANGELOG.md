@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.2.0...v1.3.0) (2024-12-12)
+
+
+### Features
+
+* **STRINGS-221:** Extend `PhraseConfig` type with `hidingClasses` field ([#65](https://github.com/phrase/ngx-translate-phraseapp/issues/65)) ([43967ff](https://github.com/phrase/ngx-translate-phraseapp/commit/43967fff59590ec28adeb7204f3b39154135dde0))
+
 # [1.2.0](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.1.4...v1.2.0) (2023-11-27)
 
 
