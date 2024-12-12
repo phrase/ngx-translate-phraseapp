@@ -1,3 +1,5 @@
+type RequiredConfigOptions = "projectId" | "accountId";
+
 export type PhraseConfig = Partial<{
   phraseEnabled: boolean;
   baseUrl: string;
@@ -20,7 +22,7 @@ export type PhraseConfig = Partial<{
   useOldICE: boolean;
   forceLocale: boolean;
   loginDialogMessage: string;
-  datacenter: 'eu' | 'us';
+  datacenter: "eu" | "us";
   autoLogin: {
     perform: boolean;
     email: string;
@@ -35,25 +37,28 @@ export type PhraseConfig = Partial<{
   fullReparse: boolean;
   sanitize?: (content: string) => string;
   origin?: string;
+  hidingClasses: string[];
 }>;
 
 declare global {
   interface Window {
-    PHRASEAPP_ENABLED: PhraseConfig['phraseEnabled'];
+    PHRASEAPP_ENABLED: PhraseConfig["phraseEnabled"];
     PHRASEAPP_CONFIG: PhraseConfig;
   }
 }
 
 let phraseAppEditor = false;
 
-export function initializePhraseAppEditor(config: PhraseConfig) {
+export function initializePhraseAppEditor(
+  config: PhraseConfig & Required<Pick<PhraseConfig, RequiredConfigOptions>>
+): void {
   if (phraseAppEditor) return;
   phraseAppEditor = true;
 
   const defaultConfig: PhraseConfig = {
     phraseEnabled: false,
-    prefix: '{{__',
-    suffix: '__}}',
+    prefix: "{{__",
+    suffix: "__}}",
     useOldICE: false,
     fullReparse: true,
   };
@@ -62,21 +67,21 @@ export function initializePhraseAppEditor(config: PhraseConfig) {
   window.PHRASEAPP_CONFIG = {
     ...defaultConfig,
     ...config,
-    origin: 'ngx-translate-phraseapp',
+    origin: "ngx-translate-phraseapp",
   };
 
   if (config.phraseEnabled) {
-    const phraseapp = document.createElement('script');
+    const phraseapp = document.createElement("script");
     phraseapp.async = true;
 
     if (!config.useOldICE) {
-      phraseapp.type = 'module';
+      phraseapp.type = "module";
       phraseapp.src = `https://d2bgdldl6xit7z.cloudfront.net/latest/ice/index.js`;
     } else {
-      phraseapp.type = 'text/javascript';
+      phraseapp.type = "text/javascript";
       phraseapp.src = `https://phrase.com/assets/in-context-editor/2.0/app.js?${new Date().getTime()}`;
     }
-    var scriptEl = document.getElementsByTagName('script')[0];
+    var scriptEl = document.getElementsByTagName("script")[0];
     if (scriptEl?.parentNode) {
       scriptEl.parentNode.insertBefore(phraseapp, scriptEl);
     } else {
@@ -91,5 +96,5 @@ export function isPhraseEnabled(): boolean {
 
 export function escapeId(id: string): string {
   let config = window.PHRASEAPP_CONFIG;
-  return config.prefix + 'phrase_' + id + config.suffix;
+  return config.prefix + "phrase_" + id + config.suffix;
 }
