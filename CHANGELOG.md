@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.3.0...v1.3.1) (2025-08-04)
+
+
+### Bug Fixes
+
+* **SCM-620:** Replace CDN url ([#76](https://github.com/phrase/ngx-translate-phraseapp/issues/76)) ([a239344](https://github.com/phrase/ngx-translate-phraseapp/commit/a2393449ee01274d4a3f84087eef2ccc46bc6b21))
+
 # [1.3.0](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.2.0...v1.3.0) (2024-12-12)
 
 
