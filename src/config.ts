@@ -76,7 +76,7 @@ export function initializePhraseAppEditor(
 
     if (!config.useOldICE) {
       phraseapp.type = "module";
-      phraseapp.src = `https://d2bgdldl6xit7z.cloudfront.net/latest/ice/index.js`;
+      phraseapp.src = `https://cdn.phrase.com/strings/plugins/editor/latest/ice/index.js`;
     } else {
       phraseapp.type = "text/javascript";
       phraseapp.src = `https://phrase.com/assets/in-context-editor/2.0/app.js?${new Date().getTime()}`;
