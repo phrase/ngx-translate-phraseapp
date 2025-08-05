@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.3.1...v1.3.2) (2025-08-05)
+
+
+### Bug Fixes
+
+* Updated types for ngx-translate version 17 ([#80](https://github.com/phrase/ngx-translate-phraseapp/issues/80)) ([b534533](https://github.com/phrase/ngx-translate-phraseapp/commit/b5345339de3ce25cf949daeab14186f6c7418142))
+
 ## [1.3.1](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.3.0...v1.3.1) (2025-08-04)
 
 
