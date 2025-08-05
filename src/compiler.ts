@@ -1,4 +1,4 @@
-import { TranslateCompiler } from '@ngx-translate/core';
+import { TranslateCompiler, InterpolatableTranslation, InterpolatableTranslationObject } from '@ngx-translate/core';
 import { escapeId, isPhraseEnabled } from './config';
 
 
@@ -7,7 +7,7 @@ export class PhraseAppCompiler extends TranslateCompiler {
         super();
     }
 
-    compile(value: string, lang: string): string | Function {
+    compile(value: string, lang: string): InterpolatableTranslation {
         if (!isPhraseEnabled()) {
             return value;
         }
@@ -15,7 +15,7 @@ export class PhraseAppCompiler extends TranslateCompiler {
         return escapeId(value);
     }
 
-    compileTranslations(translations: any, lang: string): any {
+    compileTranslations(translations: any, lang: string): InterpolatableTranslationObject {
         if (!isPhraseEnabled()) {
             return translations;
         }
