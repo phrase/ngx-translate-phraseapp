@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    ignore-paths:
+      # ignore package.json (and lockfile) directly in /example
+      - "examples/angular11/package.json"
+      - "examples/angula11/package-lock.json"
+      - "examples/angular17/package.json"
+      - "examples/angula17/package-lock.json"
+      # ignore all other example subfolders
+      - "examples/*/**"
