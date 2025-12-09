@@ -9,7 +9,9 @@
     "clean": "rm -rf dist",
     "build": "ng-packagr -p ng-package.json",
     "release:dry-run": "semantic-release -d",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "keywords": [
     "angular",
@@ -37,8 +39,13 @@
     "@ngx-translate/core": "^17.0.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
+    "@types/jest": "^29.5.12",
+    "istanbul-lib-coverage": "^3.2.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "ng-packagr": "^16.1.0",
     "semantic-release": "^21.0.7",
+    "ts-jest": "^29.2.5",
     "typescript": "5.1.6"
   },
   "peerDependencies": {
