@@ -1,23 +1,58 @@
 name: NPM release
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  id-token: write
+
 jobs:
-  release:
-    name: Release
+  dry-run:
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v6
 
     - name: Install Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v6
       with:
-        node-version: 18
+        node-version: 24
+        registry-url: https://registry.npmjs.org/
 
     - name: Install dependencies
-      run: yarn install
+      run: yarn --frozen-lockfile
+
+    - name: Build package
+      run: yarn build
+
+    - name: Release (dry-run)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: yarn release:dry-run
+
+  release:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v6
+
+    - name: Install Node.js
+      uses: actions/setup-node@v6
+      with:
+        node-version: 24
+        registry-url: https://registry.npmjs.org/
+
+    - name: Install dependencies
+      run: yarn --frozen-lockfile
 
     - name: Build package
       run: yarn build
