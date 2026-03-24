@@ -4,7 +4,6 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
-  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -23,8 +22,13 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v6
       with:
-        node-version: 24
+        node-version: 22
         registry-url: https://registry.npmjs.org/
+
+    - name: Enable Corepack and Yarn 1.22.19
+      run: |
+        corepack enable
+        corepack prepare yarn@1.22.19 --activate
 
     - name: Install dependencies
       run: yarn --frozen-lockfile
@@ -35,7 +39,6 @@ jobs:
     - name: Release (dry-run)
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: yarn release:dry-run
 
   release:
@@ -48,8 +51,13 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v6
       with:
-        node-version: 24
+        node-version: 22
         registry-url: https://registry.npmjs.org/
+
+    - name: Enable Corepack and Yarn 1.22.19
+      run: |
+        corepack enable
+        corepack prepare yarn@1.22.19 --activate
 
     - name: Install dependencies
       run: yarn --frozen-lockfile
@@ -60,5 +68,4 @@ jobs:
     - name: Release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       run: yarn release
