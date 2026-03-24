@@ -16,56 +16,56 @@ jobs:
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v6
+      - name: Checkout
+        uses: actions/checkout@v6
 
-    - name: Install Node.js
-      uses: actions/setup-node@v6
-      with:
-        node-version: 22
-        registry-url: https://registry.npmjs.org/
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
 
-    - name: Enable Corepack and Yarn 1.22.19
-      run: |
-        corepack enable
-        corepack prepare yarn@1.22.19 --activate
+      - name: Enable Corepack and Yarn 1.22.19
+        run: |
+          corepack enable
+          corepack prepare yarn@1.22.19 --activate
 
-    - name: Install dependencies
-      run: yarn --frozen-lockfile
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
 
-    - name: Build package
-      run: yarn build
+      - name: Build package
+        run: yarn build
 
-    - name: Release (dry-run)
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: yarn release:dry-run
+      - name: Release (dry-run)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn release:dry-run
 
   release:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v6
+      - name: Checkout
+        uses: actions/checkout@v6
 
-    - name: Install Node.js
-      uses: actions/setup-node@v6
-      with:
-        node-version: 22
-        registry-url: https://registry.npmjs.org/
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org/
 
-    - name: Enable Corepack and Yarn 1.22.19
-      run: |
-        corepack enable
-        corepack prepare yarn@1.22.19 --activate
+      - name: Enable Corepack and Yarn 1.22.19
+        run: |
+          corepack enable
+          corepack prepare yarn@1.22.19 --activate
 
-    - name: Install dependencies
-      run: yarn --frozen-lockfile
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
 
-    - name: Build package
-      run: yarn build
+      - name: Build package
+        run: yarn build
 
-    - name: Release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: yarn release
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn release
