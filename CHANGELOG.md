@@ -1,3 +1,10 @@
+## [1.3.6](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.3.5...v1.3.6) (2026-03-25)
+
+
+### Bug Fixes
+
+* **deps:** bump lodash-es from 4.17.21 to 4.17.23 ([#94](https://github.com/phrase/ngx-translate-phraseapp/issues/94)) ([e8fdd43](https://github.com/phrase/ngx-translate-phraseapp/commit/e8fdd439b6583886b54b804b303f2e4dbdc85f1a))
+
 ## [1.3.5](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.3.4...v1.3.5) (2026-03-24)
 
 ## [1.3.4](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.3.3...v1.3.4) (2025-12-09)
