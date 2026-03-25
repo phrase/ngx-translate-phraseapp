@@ -8,10 +8,13 @@ module.exports = {
       }],
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
-      ["@semantic-release/npm", {
-          "pkgRoot": "dist/",
-          "tarballDir": "release"
-      }],
+      [
+        "@semantic-release/exec",
+        {
+            prepareCmd: "npm version ${nextRelease.version} --no-git-tag-version && yarn build",
+            publishCmd: "npm publish ./dist --registry=https://registry.npmjs.org/"
+        }
+      ],
       "@semantic-release/github",
       "@semantic-release/git"
   ],

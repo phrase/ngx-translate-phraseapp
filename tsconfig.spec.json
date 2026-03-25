@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "types": ["jest", "node"],
+    "outDir": "./dist-tests"
+  },
+  "files": [],
+  "include": ["src/**/*.ts"]
+}

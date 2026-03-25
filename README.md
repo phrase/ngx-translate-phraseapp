@@ -39,6 +39,22 @@ You can also build it directly from source to get the latest and greatest:
 npm run dist
 ```
 
+### Testing
+
+Run the Jest suite (with coverage reporting enabled) using Yarn:
+
+```bash
+yarn test
+```
+
+This command executes all unit tests and writes coverage artifacts to the `coverage/` directory so you can inspect the `lcov-report` output in a browser if needed.
+
+For development you can also use watch mode:
+
+```bash
+yarn test:watch
+```
+
 ### Usage
 
 #### Configure
