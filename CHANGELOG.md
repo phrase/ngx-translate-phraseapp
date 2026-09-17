@@ -1,3 +1,5 @@
+## [1.3.16](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.3.15...v1.3.16) (2026-09-17)
+
 ## [1.3.15](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.3.14...v1.3.15) (2026-08-06)
 
 ## [1.3.14](https://github.com/phrase/ngx-translate-phraseapp/compare/v1.3.13...v1.3.14) (2026-07-09)
